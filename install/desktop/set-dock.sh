@@ -11,7 +11,6 @@ apps=(
 	"signal-desktop.desktop"
 	"spotify.desktop"
 	"pinta_pinta.desktop"
-	"md.obsidian.Obsidian.desktop"
 	"Activity.desktop"
 	"Docker.desktop"
 	"Omakub.desktop"
