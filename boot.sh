@@ -2,15 +2,16 @@
 
 set -e
 
-ascii_art='
+cat << 'EOF'
+
   ___  __  __    _    _  ___   _ ____       _    ____  __  __ 
  / _ \|  \/  |  / \  | |/ / | | | __ )     / \  |  _ \|  \/  |
 | | | | |\/| | / _ \ | ' /| | | |  _ \    / _ \ | |_) | |\/| |
 | |_| | |  | |/ ___ \| . \| |_| | |_) |  / ___ \|  _ <| |  | |
  \___/|_|  |_/_/   \_\_|\_\\___/|____/  /_/   \_\_| \_\_|  |_|
-'
 
-echo -e "$ascii_art"
+EOF
+
 echo "=> Omakub ARM64 Edition - For Ubuntu 24.04+ on ARM64/x86_64"
 echo -e "\nBegin installation (or abort with ctrl+c)..."
 
