@@ -8,7 +8,6 @@ apps=(
 	"Neovim.desktop"
 	"code.desktop"
 	"WhatsApp.desktop"
-	"signal-desktop.desktop"
 	"spotify.desktop"
 	"pinta_pinta.desktop"
 	"Activity.desktop"
