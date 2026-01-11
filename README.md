@@ -26,7 +26,7 @@ Watch the introduction video and read more at [omakub.org](https://omakub.org).
 Just copy and paste this single command to install everything:
 
 ```bash
-wget -qO- https://raw.githubusercontent.com/1-Me-Abhi/omakubarm/main/boot.sh | bash
+wget -qO- https://raw.githubusercontent.com/1-Me-Abhi/omakubarm/master/boot.sh | bash
 ```
 
 That's it! This one command will automatically:
@@ -38,7 +38,7 @@ That's it! This one command will automatically:
 
 > **Alternative (using curl):**
 > ```bash
-> curl -fsSL https://raw.githubusercontent.com/1-Me-Abhi/omakubarm/main/boot.sh | bash
+> curl -fsSL https://raw.githubusercontent.com/1-Me-Abhi/omakubarm/master/boot.sh | bash
 > ```
 
 **Note:** The installation process will ask for your preferences during setup. Make sure you have time to complete the installation without interruptions.
