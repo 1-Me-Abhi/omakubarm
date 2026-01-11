@@ -12,22 +12,34 @@ Turn a fresh Ubuntu installation into a fully-configured, beautiful, and modern 
 - **Google Chrome**: Chromium is installed instead (Chrome doesn't have ARM64 Linux builds)
 - Some x86-only apps have been removed from this ARM64 edition (Zoom, Discord, Steam, Minecraft, Geekbench, Windsurf)
 
+## 📋 Requirements
+
+- **Ubuntu 24.04+** (fresh installation recommended)
+- **Architecture**: ARM64 (aarch64) or x86_64 (amd64)
+- **Desktop Environment**: GNOME (for full features) or any DE (terminal tools only)
+- **Internet connection** for downloading packages
+
 Watch the introduction video and read more at [omakub.org](https://omakub.org).
 
-## Installation
+## 🚀 One-Command Installation
 
-To install Omakub ARM64 on a fresh Ubuntu 24.04+ installation, run the following command:
+Just copy and paste this single command to install everything:
 
 ```bash
 wget -qO- https://raw.githubusercontent.com/1-Me-Abhi/omakubarm/main/boot.sh | bash
 ```
 
-This single command will:
+That's it! This one command will automatically:
 1. Update your system and install git
 2. Clone the Omakub ARM64 repository
 3. Run the installation script
 4. Guide you through app choices and configurations
-5. Set up your development environment
+5. Set up your complete development environment
+
+> **Alternative (using curl):**
+> ```bash
+> curl -fsSL https://raw.githubusercontent.com/1-Me-Abhi/omakubarm/main/boot.sh | bash
+> ```
 
 **Note:** The installation process will ask for your preferences during setup. Make sure you have time to complete the installation without interruptions.
 
