@@ -12,13 +12,28 @@ if [[ -n "$dbs" ]]; then
 	for db in $dbs; do
 		case $db in
 		MySQL)
-			sudo docker run -d --restart unless-stopped -p "127.0.0.1:3306:3306" --name=mysql8 -e MYSQL_ROOT_PASSWORD= -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql:8.4
+			if sudo docker ps -a --format '{{.Names}}' | grep -q '^mysql8$'; then
+				echo "MySQL container already exists, starting it..."
+				sudo docker start mysql8 2>/dev/null || true
+			else
+				sudo docker run -d --restart unless-stopped -p "127.0.0.1:3306:3306" --name=mysql8 -e MYSQL_ROOT_PASSWORD= -e MYSQL_ALLOW_EMPTY_PASSWORD=true mysql:8.4
+			fi
 			;;
 		Redis)
-			sudo docker run -d --restart unless-stopped -p "127.0.0.1:6379:6379" --name=redis redis:7
+			if sudo docker ps -a --format '{{.Names}}' | grep -q '^redis$'; then
+				echo "Redis container already exists, starting it..."
+				sudo docker start redis 2>/dev/null || true
+			else
+				sudo docker run -d --restart unless-stopped -p "127.0.0.1:6379:6379" --name=redis redis:7
+			fi
 			;;
 		PostgreSQL)
-			sudo docker run -d --restart unless-stopped -p "127.0.0.1:5432:5432" --name=postgres16 -e POSTGRES_HOST_AUTH_METHOD=trust postgres:16
+			if sudo docker ps -a --format '{{.Names}}' | grep -q '^postgres16$'; then
+				echo "PostgreSQL container already exists, starting it..."
+				sudo docker start postgres16 2>/dev/null || true
+			else
+				sudo docker run -d --restart unless-stopped -p "127.0.0.1:5432:5432" --name=postgres16 -e POSTGRES_HOST_AUTH_METHOD=trust postgres:16
+			fi
 			;;
 		esac
 	done

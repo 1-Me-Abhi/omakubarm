@@ -5,8 +5,9 @@
 ARCH=$(dpkg --print-architecture)
 
 if [ "$ARCH" = "arm64" ] || [ "$ARCH" = "armhf" ]; then
-  # Spotify apt repository doesn't support ARM architecture, use Snap instead
-  sudo snap install spotify
+  # Spotify doesn't support ARM64/armhf on Linux (no apt, snap, or flatpak support)
+  echo "⚠️  Spotify is not available for ARM64 architecture. Skipping installation."
+  echo "   You can use Spotify Web Player at https://open.spotify.com instead."
 else
   # Use official apt repository for amd64
   if [ ! -f /etc/apt/sources.list.d/spotify.list ]; then

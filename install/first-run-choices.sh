@@ -1,9 +1,18 @@
 #!/bin/bash
 
+# Detect architecture
+ARCH=$(dpkg --print-architecture)
+
 # Only ask for default desktop app choices when running Gnome
 if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
-  OPTIONAL_APPS=("1password" "Spotify" "Dropbox")
-  DEFAULT_OPTIONAL_APPS='1password,Spotify'
+  if [ "$ARCH" = "arm64" ] || [ "$ARCH" = "armhf" ]; then
+    # Spotify doesn't support ARM64, so exclude it from options
+    OPTIONAL_APPS=("1password" "Dropbox")
+    DEFAULT_OPTIONAL_APPS='1password'
+  else
+    OPTIONAL_APPS=("1password" "Spotify" "Dropbox")
+    DEFAULT_OPTIONAL_APPS='1password,Spotify'
+  fi
   export OMAKUB_FIRST_RUN_OPTIONAL_APPS=$(gum choose "${OPTIONAL_APPS[@]}" --no-limit --selected $DEFAULT_OPTIONAL_APPS --height 6 --header "Select optional apps" | tr ' ' '-')
 fi
 
