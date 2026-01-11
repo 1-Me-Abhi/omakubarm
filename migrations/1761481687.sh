@@ -15,4 +15,4 @@ fi
 wget -qO gum.deb "https://github.com/charmbracelet/gum/releases/download/v${GUM_VERSION}/gum_${GUM_VERSION}_${GUM_ARCH}.deb"
 sudo apt-get install -y --allow-downgrades ./gum.deb
 rm gum.deb
-cd -
+cd -x
