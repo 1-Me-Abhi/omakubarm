@@ -6,9 +6,9 @@ ARCH=$(dpkg --print-architecture)
 # Only ask for default desktop app choices when running Gnome
 if [[ "$XDG_CURRENT_DESKTOP" == *"GNOME"* ]]; then
   if [ "$ARCH" = "arm64" ] || [ "$ARCH" = "armhf" ]; then
-    # Spotify doesn't support ARM64, so exclude it from options
-    OPTIONAL_APPS=("1password" "Dropbox")
-    DEFAULT_OPTIONAL_APPS='1password'
+    # 1Password and Spotify don't support ARM64, so only offer Dropbox
+    OPTIONAL_APPS=("Dropbox")
+    DEFAULT_OPTIONAL_APPS=''
   else
     OPTIONAL_APPS=("1password" "Spotify" "Dropbox")
     DEFAULT_OPTIONAL_APPS='1password,Spotify'

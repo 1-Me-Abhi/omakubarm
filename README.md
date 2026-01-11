@@ -10,6 +10,8 @@ Turn a fresh Ubuntu installation into a fully-configured, beautiful, and modern 
 ### ARM64 Notes
 
 - **Google Chrome**: Chromium is installed instead (Chrome doesn't have ARM64 Linux builds)
+- **1Password**: Not available for ARM64 Linux (use browser extension at https://my.1password.com)
+- **Spotify**: Not available for ARM64 Linux (use web player at https://open.spotify.com)
 - Some x86-only apps have been removed from this ARM64 edition (Zoom, Discord, Steam, Minecraft, Geekbench, Windsurf)
 
 ## 📋 Requirements
